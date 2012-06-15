@@ -4,6 +4,10 @@ Multichar_Symbols
 %<pl%>  ! Plural
 %<nom%> !
 
+%<nt%>  ! Neuter
+%<m%>   ! Masculine
+%<f%>   ! Feminine
+
 %{u%}   ! 
 
 %>      ! Morpheme boundary
@@ -25,15 +29,23 @@ LEXICON NUMBER
 %<sg%>: CASE ; 
 %<pl%>:%>లు  CASE ; ! lu>
 
-LEXICON N1
+LEXICON Nn
 
-%<n%>: NUMBER ;
+%<n%>%<nt%>: NUMBER ;
+
+LEXICON Nf
+
+%<n%>%<f%>: NUMBER ;
+
+LEXICON Nm
+
+%<n%>%<m%>: NUMBER ;
 
 LEXICON Nouns
 
-కుక్క:కుక్క N1 ; ! "dog"
-ఆవు:ఆవు N1 ; ! "cow"
-పేరు:పేర%{u%} N1 ; ! "name"
-చెట్టు:చెట్టు N1 ; ! "tree"
-
-
+కుక్క:కుక్క Nn ; ! "dog"
+ఆవు:ఆవు Nn ; ! "cow"
+పేరు:పేర%{u%} Nn ; ! "name"
+చెట్టు:చెటటు%{u%} Nn ; ! "tree" ceTøTu
+పెట్టె:పెట్టె Nn ; ! "box" peTøTe
+కొడుకు:కొడుకు Nm ; ! "son" 

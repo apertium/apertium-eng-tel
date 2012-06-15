@@ -1,6 +1,4 @@
 ! Telugu TWOLC file
-!
-! $Id: twol-rus.txt 25426 2009-04-21 09:48:21Z boerre $
 
 Alphabet
 
@@ -9,7 +7,7 @@ Alphabet
 
   అ  ఆ   ఇ  ఈ  ఉ  ఊ  ఋ  ౠ  ఌ  ౡ  ఎ  ఏ  ఐ  ఒ  ఓ  ఔ  అం  అః 
 
-్  ు
+్  ు  ి 
 
   %{u%}:్ 
   %>:0  ;
@@ -27,3 +25,16 @@ Rules
 
 "{u} appears word final"
 %{u%}:ు <=> _ .#. ;
+
+"TT DD shortening in Plural"
+Cx:0 <=> Cx ్:  _ %{u%}: %>: ల ; 
+    where Cx in ( ట డ ) ;
+ ! Teststring:
+ ! ట ్ట%{u%}%>ల
+    
+"Double Halant Deletion"
+%{u%}:0 <=>  ్:  ట:0  _   ;  !  Trying to delete the second halant
+ ! ్:0 <=> _ ట:0    %{u%}: ;  !  Trying to delete the first halant
+
+ ! Teststring:
+ !    ్ట%{u%}%>ల
