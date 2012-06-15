@@ -1,0 +1,27 @@
+* text=auto !eol
+/AUTHORS -text
+/COPYING -text
+/ChangeLog -text
+/Makefile.am -text
+/NEWS -text
+/README -text
+/apertium-eng-tel.eng-tel.dix -text
+/apertium-eng-tel.eng-tel.lrx -text
+/apertium-eng-tel.eng-tel.rlx -text
+/apertium-eng-tel.eng-tel.t1x -text
+/apertium-eng-tel.eng-tel.t2x -text
+/apertium-eng-tel.eng-tel.t3x -text
+/apertium-eng-tel.eng.lexc -text
+/apertium-eng-tel.eng.twol -text
+/apertium-eng-tel.tel-eng.lrx -text
+/apertium-eng-tel.tel-eng.rlx -text
+/apertium-eng-tel.tel-eng.t1x -text
+/apertium-eng-tel.tel-eng.t2x -text
+/apertium-eng-tel.tel-eng.t3x -text
+/apertium-eng-tel.tel.lexc -text
+/apertium-eng-tel.tel.twol -text
+/autogen.sh -text
+/configure.ac -text
+/eng-tel.prob -text svneol=unset#unset
+/modes.xml -text
+/tel-eng.prob -text svneol=unset#unset
