@@ -1,16 +1,39 @@
-
 Multichar_Symbols
 
 %<n%>   ! Имя существительное · Noun
+%<pl%>  ! Plural
+%<nom%> !
+
+%{u%}   ! 
+
+%>      ! Morpheme boundary
 
 LEXICON Root
 
 Nouns ; 
 
+LEXICON K
+
+# ;
+
+LEXICON CASE
+
+%<nom%>: K ;
+
+LEXICON NUMBER
+
+%<sg%>: CASE ; 
+%<pl%>:%>లు  CASE ; ! lu>
+
 LEXICON N1
 
-%<n%>: # ;
+%<n%>: NUMBER ;
 
 LEXICON Nouns
 
-కుక్క N1 ; ! ""
+కుక్క:కుక్క N1 ; ! "dog"
+ఆవు:ఆవు N1 ; ! "cow"
+పేరు:పేర%{u%} N1 ; ! "name"
+చెట్టు:చెట్టు N1 ; ! "tree"
+
+
