@@ -6,7 +6,7 @@
   <section id="main" type="standard">
     <!-- Раздел: Имя Существительное -->
 
-    <e><p><l>dog<s n="n"/></l><r>కుక్క<s n="n"/></r></p></e>
+    <e><p><l>dog<s n="n"/></l><r>కుక్క<s n="n"/><s n="nt"/></r></p></e>
 
   </section>
 </dictionary>
