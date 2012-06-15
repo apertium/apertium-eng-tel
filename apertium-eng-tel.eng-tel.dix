@@ -2,6 +2,9 @@
   <alphabet/>
   <sdefs>
     <sdef n="n"  c="Имя существительное"/>
+    <sdef n="nt" />
+    <sdef n="f" />
+    <sdef n="m" />
   </sdefs>
   <section id="main" type="standard">
     <!-- Раздел: Имя Существительное -->
