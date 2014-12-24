@@ -125,7 +125,7 @@
       <program name="lt-proc -b">
         <file name="eng-tel.autobil.bin"/>
       </program>
-      <program name="apertium-lrx-proc -t">
+      <program name="lrx-proc -t">
         <file name="eng-tel.lrx.bin"/>
       </program>
     </pipeline>
@@ -147,7 +147,7 @@
       <program name="lt-proc -b">
         <file name="eng-tel.autobil.bin"/>
       </program>
-      <program name="apertium-lrx-proc">
+      <program name="lrx-proc">
         <file name="eng-tel.lrx.bin"/>
       </program>
       <program name="apertium-transfer -b">
@@ -172,7 +172,7 @@
       <program name="lt-proc -b">
         <file name="eng-tel.autobil.bin"/>
       </program>
-      <program name="apertium-lrx-proc">
+      <program name="lrx-proc">
         <file name="eng-tel.lrx.bin"/>
       </program>
       <program name="apertium-transfer -b">
@@ -201,7 +201,7 @@
       <program name="lt-proc -b">
         <file name="eng-tel.autobil.bin"/>
       </program>
-      <program name="apertium-lrx-proc">
+      <program name="lrx-proc">
         <file name="eng-tel.lrx.bin"/>
       </program>
       <program name="apertium-transfer -b">
@@ -328,7 +328,7 @@
       <program name="lt-proc -b">
         <file name="tel-eng.autobil.bin"/>
       </program>
-      <program name="apertium-lrx-proc">
+      <program name="lrx-proc">
         <file name="tel-eng.lrx.bin"/>
       </program>
     </pipeline>
