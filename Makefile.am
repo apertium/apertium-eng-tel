@@ -46,10 +46,10 @@ $(PREFIX1).automorf.bin: $(BASENAME).$(LANG1).dix
 	cat $< | grep -v 'Dir/RL' > $@
 
 .deps/$(LANG2).RL.lexc.hfst: .deps/$(LANG2).RL.lexc
-	hfst-lexc --format foma $< -o $@
+	hfst-lexc $< -o $@
 
 .deps/$(LANG2).LR.lexc.hfst: .deps/$(LANG2).LR.lexc
-	hfst-lexc --format foma $< -o $@
+	hfst-lexc $< -o $@
 
 .deps/$(LANG2).RL.hfst: .deps/$(LANG2).RL.lexc.hfst .deps/$(LANG2).twol.hfst
 	hfst-compose-intersect -1 .deps/$(LANG2).RL.lexc.hfst -2 .deps/$(LANG2).twol.hfst -o $@
@@ -70,7 +70,7 @@ $(PREFIX2).automorf.hfst: .deps/$(LANG2).LR.hfst
 .deps/$(LANG2).LR-debug.hfst: $(BASENAME).$(LANG2).lexc
 	if [ ! -d .deps ]; then mkdir .deps; fi
 	cat $< | grep -v 'Dir/RL' | grep -v 'Use/Circ' > .deps/$(LANG2).LR-debug.lexc
-	hfst-lexc --format foma .deps/$(LANG2).LR-debug.lexc -o .deps/$(LANG2).LR-debug.lexc.hfst
+	hfst-lexc .deps/$(LANG2).LR-debug.lexc -o .deps/$(LANG2).LR-debug.lexc.hfst
 	hfst-compose-intersect -1 .deps/$(LANG2).LR-debug.lexc.hfst -2 .deps/$(LANG2).twol.hfst -o $@
 
 ###############################################################################

@@ -4,8 +4,8 @@
 
   <mode name="eng-tel" install="yes">
     <pipeline>
-      <program name="hfst-proc -w">
-        <file name="eng-tel.automorf.hfst"/>
+      <program name="lt-proc -w">
+        <file name="eng-tel.automorf.bin"/>
       </program>
       <program name="cg-proc -w">
         <file name="eng-tel.rlx.bin"/>
