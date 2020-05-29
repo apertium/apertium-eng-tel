@@ -2,7 +2,6 @@
 ## Makefile for eng-tel
 ###############################################################################
 
-VERSION=0.1.0
 LANG1=eng
 LANG2=tel
 PREFIX1=$(LANG1)-$(LANG2)
@@ -16,8 +15,9 @@ TARGETS_COMMON = $(PREFIX1).autobil.bin $(PREFIX2).autobil.bin \
         $(PREFIX1).t2x.bin $(PREFIX1).t3x.bin \
         $(PREFIX2).t2x.bin $(PREFIX2).t3x.bin \
         $(PREFIX1).rlx.bin $(PREFIX2).rlx.bin \
-        $(PREFIX1).lrx.bin $(PREFIX2).lrx.bin \
-	$(PREFIX1).mode $(PREFIX2).mode modes 
+        $(PREFIX1).lrx.bin $(PREFIX2).lrx.bin
+
+@ap_include@
 
 ###############################################################################
 ## eng transducer
@@ -34,15 +34,15 @@ $(PREFIX1).automorf.bin: $(BASENAME).$(LANG1).dix
 ###############################################################################
 
 .deps/$(LANG2).twol.hfst: $(BASENAME).$(LANG2).twol
-	if [ ! -d .deps ]; then mkdir .deps; fi
+	if [ ! -d .deps ]; then $(MKDIR_P) .deps; fi
 	hfst-twolc $< -o $@
  
 .deps/$(LANG2).RL.lexc: $(BASENAME).$(LANG2).lexc
-	if [ ! -d .deps ]; then mkdir .deps; fi
+	if [ ! -d .deps ]; then $(MKDIR_P) .deps; fi
 	cat $< | grep -v 'Dir/LR' > $@
  
 .deps/$(LANG2).LR.lexc: $(BASENAME).$(LANG2).lexc
-	if [ ! -d .deps ]; then mkdir .deps; fi
+	if [ ! -d .deps ]; then $(MKDIR_P) .deps; fi
 	cat $< | grep -v 'Dir/RL' > $@
 
 .deps/$(LANG2).RL.lexc.hfst: .deps/$(LANG2).RL.lexc
@@ -68,7 +68,7 @@ $(PREFIX2).automorf.hfst: .deps/$(LANG2).LR.hfst
 ###############################################################################
 
 .deps/$(LANG2).LR-debug.hfst: $(BASENAME).$(LANG2).lexc
-	if [ ! -d .deps ]; then mkdir .deps; fi
+	if [ ! -d .deps ]; then $(MKDIR_P) .deps; fi
 	cat $< | grep -v 'Dir/RL' | grep -v 'Use/Circ' > .deps/$(LANG2).LR-debug.lexc
 	hfst-lexc .deps/$(LANG2).LR-debug.lexc -o .deps/$(LANG2).LR-debug.lexc.hfst
 	hfst-compose-intersect -1 .deps/$(LANG2).LR-debug.lexc.hfst -2 .deps/$(LANG2).twol.hfst -o $@
@@ -148,20 +148,6 @@ $(PREFIX2).t3x.bin: $(BASENAME).$(PREFIX2).t3x
 #	lt-comp lr $< $@
 
 ###############################################################################
-## Translation modes
-###############################################################################
-
-modes/$(PREFIX1).mode: modes.xml
-	apertium-validate-modes modes.xml
-	apertium-gen-modes modes.xml
-	cp *.mode modes/
-
-modes/$(PREFIX2).mode: modes.xml
-	apertium-validate-modes modes.xml
-	apertium-gen-modes modes.xml
-	cp *.mode modes/
-
-###############################################################################
 ## Installation stuff
 ###############################################################################
 
@@ -172,7 +158,6 @@ EXTRA_DIST=$(PREFIX1).prob $(PREFIX2).prob \
            $(BASENAME).$(PREFIX2).t1x $(BASENAME).$(PREFIX2).t2x $(BASENAME).$(PREFIX2).t3x \
            modes.xml
 
-apertium_eng_telmodesdir=$(prefix)/share/apertium/modes/
 apertium_eng_teldir=$(prefix)/share/apertium/$(BASENAME)/
 
 apertium_eng_tel_DATA=$(PREFIX1).autobil.bin $(PREFIX2).autobil.bin \
@@ -192,15 +177,7 @@ apertium_eng_tel_DATA=$(PREFIX1).autobil.bin $(PREFIX2).autobil.bin \
 noinst_DATA=modes/$(PREFIX1).mode modes/$(PREFIX2).mode
 
 
-install-data-local:
-	mv modes modes~
-	$(prefix)/bin/apertium-gen-modes modes.xml $(BASENAME)
-	rm -rf modes
-	mv modes~ modes
-	test -d $(DESTDIR)$(apertium_eng_telmodesdir) || mkdir $(DESTDIR)$(apertium_eng_telmodesdir)
-	$(INSTALL_DATA) $(PREFIX1).mode $(DESTDIR)$(apertium_eng_telmodesdir)
-	rm $(PREFIX1).mode
-	rm $(PREFIX2).mode
+install-data-local: install-modes
 	$(INSTALL_DATA) $(BASENAME).$(PREFIX1).t1x $(DESTDIR)$(apertium_eng_teldir)
 	$(INSTALL_DATA) $(BASENAME).$(PREFIX2).t1x $(DESTDIR)$(apertium_eng_teldir)
 	$(INSTALL_DATA) $(BASENAME).$(PREFIX1).t2x $(DESTDIR)$(apertium_eng_teldir)
