@@ -28,3 +28,12 @@
 /tel-eng.t1x.bin
 /tel-eng.t2x.bin
 /tel-eng.t3x.bin
+/*.gz
+/*.pc
+/*.zhfst
+/.DS_Store
+/ap_include.am
+/*-*.prob
+/config.in
+/config
+/test/*-output.txt

@@ -1,0 +1,10 @@
+{
+    "eng-tel": {
+        "input": "eng-tel-input.txt",
+        "mode": "eng-tel"
+    },
+    "tel-eng": {
+        "input": "tel-eng-input.txt",
+        "mode": "tel-eng"
+    }
+}

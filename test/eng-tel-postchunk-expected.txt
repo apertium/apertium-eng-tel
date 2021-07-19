@@ -1,0 +1,18 @@
+[-U-pbuZM7CgN#0] ^@be# sorry<vblex><pres><p3><sg>$
+[/-U-pbuZM7CgN]
+[7cANTbgN3D6R#0] ^@be<vbser><pres><p3><sg>$
+[/7cANTbgN3D6R]
+[OXPgIukyIPkh#0] ^@-<guio>$
+[/OXPgIukyIPkh]
+[QnamE8hlIxX0#0] ^@be# worth<vblex><pres><p1><sg>$
+[/QnamE8hlIxX0]
+[blNGXnIEYQIj#0] ^@be# missing<vblex><pres>$
+[/blNGXnIEYQIj]
+[ct_PsMRwrCVc#0] ^@L<num><mf><sg>$
+[/ct_PsMRwrCVc]
+[jpE46UmYDnDY#0] ^@be<vbser><pres>$
+[/jpE46UmYDnDY]
+[qs2DS1zcZKMp#0] ^@06<num>$
+[/qs2DS1zcZKMp]
+[zbTuKuppzGqD#0] ^@.<sent>$
+[/zbTuKuppzGqD]

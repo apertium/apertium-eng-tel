@@ -245,8 +245,8 @@
         <file name="apertium-eng-tel.tel-eng.t3x"/>
         <file name="tel-eng.t3x.bin"/>
       </program>
-      <program name="hfst-proc $1">
-        <file name="tel-eng.autogen.hfst"/>
+      <program name="lt-proc $1">
+        <file name="tel-eng.autogen.bin"/>
       </program>
     </pipeline>
   </mode>
