@@ -1,6 +1,6 @@
 [OCy6YpcWhq5k#0] ^default<default>{^@చెట్టు<n><nt>\<sg\><nom>$}$
 [/OCy6YpcWhq5k]
-[S2piJ1t5o197#0] ^default<default>{^@కుక్క<n><nt>\<sg\><nom>$}$
+[S2piJ1t5o197#0] ^default<default>{^dog<n>\<sg\><nom>$}$
 [/S2piJ1t5o197]
 [iCQDm-K-odOk#0] ^default<default>{^@ఆవు<n><nt><pl><nom>$}$
 [/iCQDm-K-odOk]

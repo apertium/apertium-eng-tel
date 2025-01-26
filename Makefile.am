@@ -36,11 +36,11 @@ $(PREFIX1).automorf.bin: $(BASENAME).$(LANG1).dix
 .deps/$(LANG2).twol.hfst: $(BASENAME).$(LANG2).twol
 	if [ ! -d .deps ]; then $(MKDIR_P) .deps; fi
 	hfst-twolc $< -o $@
- 
+
 .deps/$(LANG2).RL.lexc: $(BASENAME).$(LANG2).lexc
 	if [ ! -d .deps ]; then $(MKDIR_P) .deps; fi
 	cat $< | grep -v 'Dir/LR' > $@
- 
+
 .deps/$(LANG2).LR.lexc: $(BASENAME).$(LANG2).lexc
 	if [ ! -d .deps ]; then $(MKDIR_P) .deps; fi
 	cat $< | grep -v 'Dir/RL' > $@
@@ -82,11 +82,11 @@ $(PREFIX1).autobil.bin: $(BASENAME).$(PREFIX1).dix
 	lt-comp lr $< $@
 
 $(PREFIX2).autobil.bin: $(BASENAME).$(PREFIX1).dix
-	apertium-validate-dictionary $< 
+	apertium-validate-dictionary $<
 	lt-comp rl $< $@
 
 ###############################################################################
-## Disambiguation rules 
+## Disambiguation rules
 ###############################################################################
 
 $(PREFIX1).rlx.bin: $(BASENAME).$(PREFIX1).rlx
@@ -144,7 +144,7 @@ $(PREFIX2).t3x.bin: $(BASENAME).$(PREFIX2).t3x
 #	lt-comp lr $< $@
 #
 #$(PREFIX2).autopgen.bin: $(BASENAME).post-$(LANG2).dix
-#	apertium-validate-dictionary $< 
+#	apertium-validate-dictionary $<
 #	lt-comp lr $< $@
 
 ###############################################################################
@@ -172,7 +172,7 @@ apertium_eng_tel_DATA=$(PREFIX1).autobil.bin $(PREFIX2).autobil.bin \
 		    $(BASENAME).$(PREFIX1).t1x $(BASENAME).$(PREFIX2).t1x \
 		    modes.xml
 
-#		    $(PREFIX1).autopgen.bin $(PREFIX2).autopgen.bin 
+#		    $(PREFIX1).autopgen.bin $(PREFIX2).autopgen.bin
 
 noinst_DATA=modes/$(PREFIX1).mode modes/$(PREFIX2).mode
 
